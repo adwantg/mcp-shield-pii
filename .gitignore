@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing / Coverage
+.pytest_cache/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+
+# mypy
+.mypy_cache/
+
+# ruff
+.ruff_cache/
+
+# Audit logs (generated at runtime)
+shield_audit.jsonl
+*.jsonl
+
+# Encryption keys (NEVER commit)
+.shield_key
+*.key
+
+# Build artifacts
+*.tar.gz
+*.whl
+
+# Misc
+*.log
+.env
+.env.*
+.agent

@@ -1,0 +1,95 @@
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mcp-shield-pii"
+version = "2.0.0"
+description = "Intercepting gateway proxy for MCP clients/servers — real-time PII redaction using Python 3.14 concurrent.interpreters"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [{ name = "gadwant" }]
+keywords = ["mcp", "pii", "redaction", "proxy", "privacy", "gdpr", "hipaa", "security"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Security",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "typer>=0.12.0",
+    "rich>=13.9.0",
+    "tomli>=2.0.0;python_version<'3.11'",
+    "watchfiles>=1.0.0",
+    "cryptography>=42.0.0",
+    "aiohttp>=3.9.0",
+    "httpx>=0.27.0",
+]
+
+[project.optional-dependencies]
+nlp = [
+    "spacy>=3.7.0",
+]
+dev = [
+    "build>=1.2.0",
+    "twine>=6.0.0",
+    "ruff>=0.8.0",
+    "mypy>=1.13.0",
+    "pytest>=8.3.0",
+    "pytest-cov>=6.0.0",
+    "pytest-asyncio>=0.24.0",
+    "hypothesis>=6.119.0",
+    "pip-audit>=2.8.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/gadwant/mcp-shield-pii"
+Repository = "https://github.com/gadwant/mcp-shield-pii"
+Issues = "https://github.com/gadwant/mcp-shield-pii/issues"
+
+[project.scripts]
+mcp-shield-pii = "mcp_shield_pii.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mcp_shield_pii"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "C4", "RUF"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_unused_configs = true
+mypy_path = ["src"]
+
+[[tool.mypy.overrides]]
+module = ["tests.*"]
+disallow_untyped_defs = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --strict-markers --strict-config"
+xfail_strict = true
+asyncio_mode = "auto"
+
+[tool.coverage.run]
+source = ["mcp_shield_pii"]
+
+[tool.coverage.report]
+fail_under = 80
+show_missing = true
