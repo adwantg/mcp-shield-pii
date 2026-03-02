@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "mcp-shield-pii"
+version: "2.0.0"
+date-released: "2026-03-02"
+license: MIT
+url: "https://github.com/adwantg/mcp-shield-pii"
+repository-code: "https://github.com/adwantg/mcp-shield-pii"
+abstract: >-
+  Real-time PII redaction proxy for the Model Context Protocol (MCP).
+  Intercepts MCP client-server communication to detect and mask 23 types
+  of personally identifiable information using regex, NLP, and context-aware
+  scoring — ensuring GDPR/HIPAA compliance before data reaches the LLM.
+keywords:
+  - pii
+  - redaction
+  - mcp
+  - model-context-protocol
+  - privacy
+  - gdpr
+  - hipaa
+  - proxy
+  - ai-safety
+  - python
+authors:
+  - family-names: "Adwant"
+    given-names: "Goutam"
+    alias: "adwantg"
