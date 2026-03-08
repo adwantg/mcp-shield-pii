@@ -5,11 +5,11 @@ build-backend = "hatchling.build"
 [project]
 name = "mcp-shield-pii"
 version = "2.0.0"
-description = "Intercepting gateway proxy for MCP clients/servers — real-time PII redaction using Python 3.14 concurrent.interpreters"
+description = "Intercepting gateway proxy for MCP clients/servers — real-time PII redaction with regex, NLP, and optional subinterpreter concurrency"
 readme = "README.md"
 requires-python = ">=3.12"
 license = { text = "MIT" }
-authors = [{ name = "gadwant" }]
+authors = [{ name = "Goutam Adwant" }]
 keywords = ["mcp", "pii", "redaction", "proxy", "privacy", "gdpr", "hipaa", "security"]
 classifiers = [
     "Development Status :: 4 - Beta",

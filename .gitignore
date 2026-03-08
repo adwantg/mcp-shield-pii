@@ -55,3 +55,4 @@ shield_audit.jsonl
 .env
 .env.*
 .agent
+documentation/

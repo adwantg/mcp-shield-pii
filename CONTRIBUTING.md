@@ -9,8 +9,8 @@ Thank you for contributing! We welcome bug reports, feature requests, and pull r
 git clone https://github.com/gadwant/mcp-shield-pii.git
 cd mcp-shield-pii
 
-# Create a virtual environment using Python 3.14+
-python3.14 -m venv .venv
+# Create a virtual environment using Python 3.12+
+python3 -m venv .venv
 source .venv/bin/activate
 
 # Install editable package with dev dependencies
@@ -49,7 +49,7 @@ We enforce strict validation because this package operates as a security/privacy
 2. **Deterministic Output**: If generating schemas or masking entities, ensure the output size/shape is predictable.
 3. **No Drift or Regression**: Test against known MCP RPC payloads to ensure changes don't cause infinite masking loops or unhandled exceptions. 
 4. **Update README & Docs**: `README_MAINTENANCE_CONTRACT.md` dictates that any behavior change must include an accompanying `README.md` update.
-5. **Python 3.14 Only Constraints**: Be careful not to introduce non-subinterpreter-safe C extensions or shared memory traps across `concurrent.interpreters`.
+5. **Python 3.12+ Compatibility**: The library must work on Python 3.12+. On Python 3.14+, `concurrent.interpreters` is used for GIL-free parallelism; on older versions, `ProcessPoolExecutor` is used as a fallback.
 
 ## Issue Reporting
 

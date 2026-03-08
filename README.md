@@ -1,6 +1,6 @@
 # mcp-shield-pii
 
-> 🛡️ Real-time PII redaction proxy for MCP clients and servers — zero-latency privacy using Python 3.14 subinterpreters.
+> 🛡️ Real-time PII redaction proxy for MCP clients and servers — zero-latency privacy for Python 3.12+, with optional Python 3.14 subinterpreter acceleration.
 
 **mcp-shield-pii** is an intercepting gateway proxy that sits between your MCP client (e.g., Claude Desktop) and any downstream MCP server. It detects and masks Personally Identifiable Information in real-time before it reaches the LLM's context window, ensuring GDPR/HIPAA compliance with a single `pip install`.
 
@@ -133,7 +133,7 @@ mcp-shield-pii dashboard --port 8765
 | **Compliance Dashboard** | Dark-mode web UI with real-time event table and severity badges |
 | **GDPR/HIPAA Reports** | Auto-generated compliance reports (text, JSON, markdown) |
 | **Webhook Alerts** | Notify Slack/Teams when high-severity PII is detected |
-| **Subinterpreter Pool** | Python 3.14 `concurrent.interpreters` for GIL-free parallel detection |
+| **Subinterpreter Pool** | GIL-free parallel detection via `concurrent.interpreters` (3.14+) or `ProcessPoolExecutor` (3.12+) |
 
 ## Detected Entity Types
 
