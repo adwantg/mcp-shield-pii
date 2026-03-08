@@ -1,8 +1,5 @@
 """Tests for the config loader and context scorer."""
 
-import pytest
-import tempfile
-from pathlib import Path
 from mcp_shield_pii.config.loader import ShieldConfig, load_config
 from mcp_shield_pii.detection.base import DetectionResult, EntityType
 from mcp_shield_pii.detection.context_scorer import ContextScorer

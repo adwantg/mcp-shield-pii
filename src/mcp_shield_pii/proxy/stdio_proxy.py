@@ -5,9 +5,7 @@ from __future__ import annotations
 import asyncio
 import logging
 import shlex
-import signal
 import sys
-from typing import Any
 
 from mcp_shield_pii.proxy import MCPInterceptor
 
@@ -126,6 +124,6 @@ class StdioProxy:
             self._process.terminate()
             try:
                 await asyncio.wait_for(self._process.wait(), timeout=5.0)
-            except asyncio.TimeoutError:
+            except TimeoutError:
                 self._process.kill()
             logger.info("Downstream server terminated.")

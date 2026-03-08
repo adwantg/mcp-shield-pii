@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 import logging
 from collections import Counter
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -71,7 +71,7 @@ class ComplianceReportGenerator:
         )
 
         return {
-            "report_generated": datetime.now(timezone.utc).isoformat(),
+            "report_generated": datetime.now(UTC).isoformat(),
             "period_start": first,
             "period_end": last,
             "total_scans": total_scans,
@@ -122,8 +122,8 @@ class ComplianceReportGenerator:
             "",
             "## Summary",
             "",
-            f"| Metric | Value |",
-            f"|--------|-------|",
+            "| Metric | Value |",
+            "|--------|-------|",
             f"| Total Scans | {data['total_scans']} |",
             f"| Entities Redacted | {data['total_entities_redacted']} |",
             f"| Average Confidence | {data['average_confidence']:.1%} |",

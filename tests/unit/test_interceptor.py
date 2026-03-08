@@ -1,7 +1,9 @@
 """Tests for the MCP interceptor and pipeline."""
 
 import json
+
 import pytest
+
 from mcp_shield_pii.config.loader import ShieldConfig
 from mcp_shield_pii.pipeline import ShieldPipeline
 from mcp_shield_pii.proxy import MCPInterceptor

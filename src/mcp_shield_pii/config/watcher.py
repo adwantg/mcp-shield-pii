@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import asyncio
 import logging
+from collections.abc import Callable
 from pathlib import Path
-from typing import Callable
 
 from mcp_shield_pii.config.loader import ShieldConfig, load_config
 

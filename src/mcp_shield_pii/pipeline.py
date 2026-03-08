@@ -4,16 +4,15 @@ from __future__ import annotations
 
 import logging
 import time
-from typing import Any
 
-from mcp_shield_pii.config.loader import ShieldConfig, EntityConfig
-from mcp_shield_pii.detection.base import DetectionResult, DetectionSummary, EntityType
-from mcp_shield_pii.detection.regex_engine import RegexDetectionEngine
-from mcp_shield_pii.detection.nlp_engine import NLPDetectionEngine
-from mcp_shield_pii.detection.context_scorer import ContextScorer
-from mcp_shield_pii.masking.strategies import MaskingStrategy, get_strategy
-from mcp_shield_pii.masking.reversible import ReversibleRedactor
 from mcp_shield_pii.audit import AuditLogger
+from mcp_shield_pii.config.loader import ShieldConfig
+from mcp_shield_pii.detection.base import DetectionResult, DetectionSummary
+from mcp_shield_pii.detection.context_scorer import ContextScorer
+from mcp_shield_pii.detection.nlp_engine import NLPDetectionEngine
+from mcp_shield_pii.detection.regex_engine import RegexDetectionEngine
+from mcp_shield_pii.masking.reversible import ReversibleRedactor
+from mcp_shield_pii.masking.strategies import MaskingStrategy, get_strategy
 
 logger = logging.getLogger(__name__)
 

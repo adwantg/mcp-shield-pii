@@ -5,14 +5,11 @@ from __future__ import annotations
 import asyncio
 import json
 import logging
-import sys
 from pathlib import Path
-from typing import Optional
 
 import typer
 from rich.console import Console
 from rich.table import Table
-from rich import print as rprint
 
 from mcp_shield_pii import __version__
 
@@ -36,7 +33,7 @@ def proxy(
     downstream: str = typer.Option(
         ..., "--downstream", "-d", help="Downstream MCP server command to proxy"
     ),
-    config: Optional[str] = typer.Option(
+    config: str | None = typer.Option(
         None, "--config", "-c", help="Path to shield.toml config file"
     ),
     dry_run: bool = typer.Option(
@@ -77,7 +74,7 @@ def proxy(
 def scan(
     text: str = typer.Argument(..., help="Text to scan for PII"),
     strategy: str = typer.Option("redact", "--strategy", "-s", help="Masking strategy"),
-    config: Optional[str] = typer.Option(None, "--config", "-c"),
+    config: str | None = typer.Option(None, "--config", "-c"),
     dry_run: bool = typer.Option(False, "--dry-run"),
     output_json: bool = typer.Option(False, "--json", help="Output as JSON"),
 ) -> None:
@@ -147,7 +144,7 @@ def report(
     output_format: str = typer.Option(
         "text", "--format", "-f", help="Output format: text, json, markdown"
     ),
-    output_file: Optional[str] = typer.Option(
+    output_file: str | None = typer.Option(
         None, "--output", "-o", help="Write report to file"
     ),
 ) -> None:

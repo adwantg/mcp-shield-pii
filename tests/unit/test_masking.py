@@ -1,12 +1,13 @@
 """Tests for masking strategies."""
 
 import pytest
+
 from mcp_shield_pii.detection.base import DetectionResult, EntityType
 from mcp_shield_pii.masking.strategies import (
-    RedactMaskingStrategy,
-    PartialMaskingStrategy,
     HashMaskingStrategy,
+    PartialMaskingStrategy,
     PseudoAnonymizationStrategy,
+    RedactMaskingStrategy,
     get_strategy,
 )
 

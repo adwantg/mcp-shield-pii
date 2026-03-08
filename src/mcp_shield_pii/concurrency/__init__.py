@@ -9,8 +9,9 @@ from __future__ import annotations
 import asyncio
 import logging
 import sys
-from concurrent.futures import ProcessPoolExecutor, Future
-from typing import Any, Callable
+from collections.abc import Callable
+from concurrent.futures import Future, ProcessPoolExecutor
+from typing import Any
 
 logger = logging.getLogger(__name__)
 

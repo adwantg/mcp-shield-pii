@@ -56,3 +56,4 @@ shield_audit.jsonl
 .env.*
 .agent
 documentation/
+release.sh

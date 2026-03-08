@@ -2,11 +2,8 @@
 
 from __future__ import annotations
 
-import asyncio
-import json
 import logging
-from datetime import datetime, timezone
-from typing import Any
+from datetime import UTC, datetime
 
 from mcp_shield_pii.config.loader import WebhookConfig
 from mcp_shield_pii.detection.base import DetectionResult, EntityType
@@ -64,7 +61,7 @@ class WebhookAlert:
     ) -> None:
         """Send a single webhook POST request."""
         payload = {
-            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "timestamp": datetime.now(UTC).isoformat(),
             "event": "pii_detected",
             "severity": get_severity(result.entity_type),
             "entity_type": result.entity_type.value,

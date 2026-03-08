@@ -1,6 +1,7 @@
 """Comprehensive tests for the regex detection engine."""
 
 import pytest
+
 from mcp_shield_pii.detection.base import EntityType
 from mcp_shield_pii.detection.regex_engine import RegexDetectionEngine, _luhn_check
 

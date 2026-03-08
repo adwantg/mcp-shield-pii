@@ -6,7 +6,7 @@ import json
 import logging
 import time
 from dataclasses import asdict, dataclass, field
-from datetime import datetime, timezone
+from datetime import UTC, datetime, timezone
 from pathlib import Path
 from typing import Any, TextIO
 
@@ -65,7 +65,7 @@ class AuditLogger:
     ) -> None:
         """Log a single redaction event."""
         event = AuditEvent(
-            timestamp=datetime.now(timezone.utc).isoformat(),
+            timestamp=datetime.now(UTC).isoformat(),
             tool_name=tool_name,
             entity_type=result.entity_type.value,
             original_length=len(result.text),
@@ -86,7 +86,7 @@ class AuditLogger:
     ) -> None:
         """Log a summary of a scan operation."""
         summary = {
-            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "timestamp": datetime.now(UTC).isoformat(),
             "event_type": "scan_summary",
             "tool_name": tool_name,
             "total_entities": total_entities,

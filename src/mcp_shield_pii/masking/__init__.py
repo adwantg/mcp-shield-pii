@@ -10,10 +10,10 @@ from mcp_shield_pii.masking.strategies import (
 )
 
 __all__ = [
-    "MaskingStrategy",
-    "RedactMaskingStrategy",
-    "PartialMaskingStrategy",
     "HashMaskingStrategy",
+    "MaskingStrategy",
+    "PartialMaskingStrategy",
     "PseudoAnonymizationStrategy",
+    "RedactMaskingStrategy",
     "get_strategy",
 ]

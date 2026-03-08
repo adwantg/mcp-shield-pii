@@ -148,7 +148,7 @@ class HashMaskingStrategy(MaskingStrategy):
         elif self._algorithm == "sha3_256":
             h = hashlib.sha3_256(data).hexdigest()
         elif self._algorithm == "md5":
-            h = hashlib.md5(data).hexdigest()  # noqa: S324
+            h = hashlib.md5(data).hexdigest()
         else:
             h = hashlib.sha256(data).hexdigest()
 
